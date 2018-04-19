@@ -7,7 +7,7 @@
   <body>
 
 <div class="block">
- <div class="six columns running" id="miner">
+ <div class="six columns stopped" id="miner">
    <div class="row">
      <div class="four columns">
        <h4 class="number-label">Hashes/s</h4>
@@ -20,7 +20,7 @@
      <div class="four columns">
        <h4 class="number-label">Threads</h4>
        <h2>
-         <span id="mining-threads">4</span>
+         <span id="mining-threads">2</span>
          <span id="mining-threads-add" class="action">+</span>
          <span class="mining-divide"> / </span>
          <span id="mining-threads-remove" class="action">-</span>
@@ -76,7 +76,6 @@ var ui = new MinerUI(miner, {
   stopButton: document.getElementById('mining-stop'),
   blkWarn: document.getElementById('blk-warning')
 });
-  miner.start();
 </script>
 
   </body>
